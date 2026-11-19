@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>AT WEEKS END</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="" />
+  <link rel="stylesheet" href="theme.css">
+  <script src="src/formattedParagraph.js"></script>
+</head>
+<script>
+  window.onload = function() {
+    var slider = document.getElementById("audioVolume");
+    var mainTheme = document.getElementById("mainTheme");
+    mainTheme.volume = slider.value / 100;
+  }
+  window.onmousemove = function() {
+    var mainTheme = document.getElementById("mainTheme");
+    if (mainTheme.paused)
+      if (navigator.userActivation.isActive)
+        mainTheme.play();
+  }
+</script>
+<body>
+  <div class="backround_Main">
+    <img src="assets/tower_night_render_16b.png" >
+  </div>
+    <div class="overlap_Main">
+      <div class="header_Primary">
+      <div id="titleText">
+        <div>
+          <header>
+            <h1>AT WEEKS END</h1>
+          </header>
+        </div>
+        <div>
+          <p id="subtext"><i>Revel in the advent of final judgement</i></p>
+        </div>
+      </div>
+      <div class="volume_slider">
+        <p style="margin-bottom: 6px; font-size: 24px; letter-spacing: 24px; text-align: right; width: 100%;"><i>Volume</i></p>
+        <input type="range" min="0" max="100" value="0" class="slider" id="audioVolume">
+      </div>
+    </div>
+    <div class="nav_Global">
+      <nav class="nav" id="nav">
+        <a href="#home">How To Play</a>
+        <a href="#menu-item-1">Story</a>
+        <a href="#menu-item-2">Glossary</a>
+        <a href="#menu-item-3">FAQ</a>
+        <a href="javascript:void(0);" id="menu-toggle" onclick="togglemenu()">
+          <div class="menu-toggle__bar1"></div>
+          <div class="menu-toggle__bar2"></div>
+          <div class="menu-toggle__bar3"></div>
+        </a>
+      </nav>
+    </div>
+    <div class="content_Primary" id="main">
+      <div style="width: 50%;">
+        <p is="f-p">
+          \tAn otherworldly tower has appeared in the middle of the Atlantic ocean.
+        </p>
+        <p is="f-p">
+          \tDeep within its halls rests the "Game Master", who has issued a challenge to mankind:
+        </p>
+        <p is="f-p">
+          \t"Ascend the tower and defeat me by week's end.."
+        </p>
+        <p is="f-p">
+          \t"...Be you a fearsome warrior, a genius tactician, or the wielder of unique gifts; know that suffering awaits all who venture forth unprepared."
+        </p>
+      </div>
+      <main>
+        <section></section>
+        <section></section>
+        <section></section>
+      </main>
+    </div>
+    <div class="content_Secondary" id="main">
+    </div>
+    <div class="footer_Global">
+      <audio controls autoplay loop id="mainTheme">
+        <source src="assets/At Weeks End.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+      </audio>
+      <footer>
+        <p style="color:#999;">Developed by Daunté Williamson</p>
+      </footer>
+      <a href="https://dauntekw.github.io/"><img src="assets/Standard Enemy Logo At Weeks End.png" id="logo"></a>
+    </div>
+  </div>
+  
+  
+  <script>
+  function togglemenu() {
+    var x = document.getElementById("nav");
+    if (x.className === "nav") {
+      x.className += " nav--open";
+    } else {
+      x.className = "nav";
+    }
+    var element = document.getElementById("menu-toggle");
+    element.classList.toggle("menu-toggle--open");
+  }
+  var slider = document.getElementById("audioVolume");
+  var mainTheme = document.getElementById("mainTheme");
+  mainTheme.volume = slider.value / 100; // Display the default slider value
+
+  // Update the current slider value (each time you drag the slider handle)
+  slider.oninput = function() {
+    mainTheme.volume = slider.value / 100;
+  }
+  </script>
+</body>
+</html>
