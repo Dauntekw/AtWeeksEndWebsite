@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'monogram';
-  src: url(/assets/monogram-extended.ttf);
+  src: url(./assets/monogram-extended.ttf);
   font-kerning: auto;
 }
 
 @font-face {
   font-family: 'novem';
-  src: url(/assets/novem__.ttf);
+  src: url(./assets/novem__.ttf);
 }
 
 @font-face {
   font-family: 'felixti';
-  src: url(/assets/FELIXTI.TTF);
+  src: url(./assets/FELIXTI.TTF);
 }
 audio {
   display: none;
@@ -94,7 +94,7 @@ div.header_Primary div.volume_slider {
   border-width: 8px;
   border-spacing: 0px;
   border-style: solid;
-  border-image: url("/assets/pixelBorder2.png");
+  border-image: url("./assets/pixelBorder2.png");
   border-image-slice: 4 fill;
 }
 .slider::-webkit-slider-thumb {
@@ -106,7 +106,7 @@ div.header_Primary div.volume_slider {
   border-width: 8px;
   border-spacing: 0px;
   border-style: solid;
-  border-image: url("/assets/pixelBorder1.png");
+  border-image: url("./assets/pixelBorder1.png");
   border-image-slice: 2 fill;
   cursor: pointer; /* Cursor on hover */
 }
@@ -118,7 +118,7 @@ div.header_Primary div.volume_slider {
   border-width: 8px;
   border-spacing: 0px;
   border-style: solid;
-  border-image: url("/assets/pixelBorder1.png");
+  border-image: url("./assets/pixelBorder1.png");
   border-image-slice: 2 fill;
   cursor: pointer; /* Cursor on hover */
 }
@@ -141,7 +141,7 @@ div.nav_Global {
   border-width: 12px;
   border-spacing: 0px;
   border-style: solid;
-  border-image: url("/assets/pixelBorder2.png");
+  border-image: url("./assets/pixelBorder2.png");
   border-image-slice: 4 4;
 }
 div.content_Primary {
@@ -188,7 +188,7 @@ div.footer_Global {
   border-width: 8px;
   border-spacing: 0px;
   border-style: solid;
-  border-image: url("/assets/pixelBorder1.png");
+  border-image: url("./assets/pixelBorder1.png");
   border-image-slice: 2 fill;
 }
 .nav #menu-toggle {
