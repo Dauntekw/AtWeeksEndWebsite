@@ -8,7 +8,6 @@ class FormattedParagraph extends HTMLParagraphElement {
   }
   swapNewLines() {
     var pre = this.innerHTML.split('\\n');
-    console.log(pre);
     if (!pre.length)
       return;
     var newString = "";
@@ -18,12 +17,10 @@ class FormattedParagraph extends HTMLParagraphElement {
         newString += this.newlineSequence;
       }
     }
-    console.log(newString);
     this.innerHTML = newString;
   }
   swapTabs() {
     var pre = this.innerHTML.split('\\t');
-    console.log(pre);
     if (!pre.length)
       return;
     var newString = "";
@@ -33,7 +30,6 @@ class FormattedParagraph extends HTMLParagraphElement {
         newString += this.tabSequence;
       }
     }
-    console.log(newString);
     this.innerHTML = newString;
   }
   formatInnerHTML() {
