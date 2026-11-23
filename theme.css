@@ -64,6 +64,9 @@ div.background_Main img {
   height: auto;
   object-fit: scale-down;
 }
+.formattedP {
+  width: 50%;
+}
 body {
   display: block;
   background-color: #000000;
@@ -85,7 +88,6 @@ div.header_Primary {
   padding-bottom: 0;
   font-size: 1.5em;
   align-items:first baseline;
-  mix-blend-mode: normal;
 }
 div.header_Primary #titleText header{
   padding-bottom: 0;
@@ -108,7 +110,9 @@ div.header_Primary p#subtext {
   letter-spacing: 8px;
   text-align: left;
   padding-left: 4em;
-  color:#999;
+  color: #999;
+  text-shadow: rgba(0,0,0,1) 1px -2px 2px;
+  mix-blend-mode: difference;
 }
 div.header_Primary div.volume_slider {
   display: flex;
@@ -117,6 +121,14 @@ div.header_Primary div.volume_slider {
   margin-left: auto;
   width:240px;
   min-width: 120px;
+}
+div.header_Primary div.volume_slider #volumeText {
+  margin-bottom: 6px; 
+  font-size: 24px; 
+  letter-spacing: 24px; 
+  text-align: right; 
+  width: 100%; 
+  mix-blend-mode: difference;
 }
 .slider{
   -webkit-appearance: none;  /* Override default CSS styles */
@@ -210,6 +222,7 @@ div.footer_Global {
 }
 .nav {
   mix-blend-mode: normal;
+  width: 100%;
   display: flex;
   overflow: hidden;
   justify-content: space-between;
@@ -239,9 +252,65 @@ div.footer_Global {
   border-image: url("./assets/pixelBorder1.png");
   border-image-slice: 2 fill;
 }
-@media only screen and (max-device-width: 1366px) {
-  .parallax {
-    perspective: 0;
-    -webkit-perspective: 0;
+.nav_Mobile {
+  display: none;
+}
+@media only screen and (max-width: 900px) {
+  .formattedP {
+    width: 75%;
+  }
+  .layer1 img {
+    position: absolute;
+    left: calc(0% - 300%);
+    width: 900%;
+    height: auto;
+    top: calc(0% - 100%);
+  }
+  div.header_Primary {
+    flex-direction: column;
+  }
+  div.header_Primary h1 {
+    mix-blend-mode: difference;
+  }
+}
+@media only screen and (max-width: 600px) {
+  div.header_Primary div.volume_slider {
+    width:100%;
+  }
+  div.header_Primary div.volume_slider #volumeText {
+    text-align: left;
+  }
+  .formattedP {
+    width: 100%;
+  }
+  .layer1 img {
+    position: absolute;
+    left: calc(0% - 600%);
+    width: 1500%;
+    height: auto;
+    top: calc(0% - 100%);
+  }
+  .nav_Mobile {
+    display: flex;
+    margin-top: 8px;
+    justify-content: center;
+    mix-blend-mode: difference;
+  }
+  .nav {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .nav a {
+    overflow: hidden;
+    width: auto;
+  }
+  .nav a:not(:first-child) {
+    display: none;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .nav.responsive a:not(:first-child) {
+    display: flex;
+    justify-content: center;
   }
 }

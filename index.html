@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="" />
     <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="./src/nav.js"></script>
     <script src="./src/formattedParagraph.js"></script>
     <script src="./src/uiSounds.js"></script>
   </head>
@@ -44,9 +46,14 @@
             </div>
           </div>
           <div class="volume_slider">
-            <p style="margin-bottom: 6px; font-size: 24px; letter-spacing: 24px; text-align: right; width: 100%;"><i>Volume</i></p>
+            <p id="volumeText"><i>Volume</i></p>
             <input type="range" min="0" max="100" value="0" class="slider" id="audioVolume" oninput="updateVolume()">
           </div>
+        </div>
+        <div class="nav_Mobile">
+          <a class="reveal" onclick="toggleNav(); playUIConfirm()" onmouseover="playUIMove()">
+            <i class="fa fa-bars"></i>
+          </a>
         </div>
         <div class="nav_Global">
           <nav class="nav" id="nav">
@@ -57,7 +64,7 @@
           </nav>
         </div>
         <div class="content_Primary" id="main">
-          <div style="width: 50%;">
+          <div class="formattedP">
             <p is="f-p">
               \tAn otherworldly tower has appeared in the middle of the Atlantic ocean.
             </p>
