@@ -204,6 +204,7 @@ div.content_Secondary {
   padding-left: 3em;
   padding-right: 3em;
   text-align: center;
+  justify-content: center;
 }
 div.content_Secondary h2 {
   mix-blend-mode: difference;
@@ -271,6 +272,14 @@ div.footer_Global {
   }
   div.header_Primary h1 {
     mix-blend-mode: difference;
+    font-size: 1.2em;
+  }
+  div.header_Primary p#subtext {
+    font-size: 20px;
+    text-indent: 0em;
+  }
+  div.content_Secondary {
+    font-size: 0.8em;
   }
 }
 @media only screen and (max-width: 600px) {
