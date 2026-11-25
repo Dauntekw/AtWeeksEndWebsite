@@ -21,7 +21,6 @@ function selectDisplay(display) {
   }
   fetch('./pages/' + display + '.html').then(function(response) {
     if (response.ok) {
-      console.log(response)
       return response.text();
     }
     throw response
@@ -30,8 +29,6 @@ function selectDisplay(display) {
     let html = grabHTML(text);
     var old = parent.querySelectorAll('div')
     var newContent = html.querySelectorAll('div');
-    console.log(old);
-    console.log(parent)
     //parent.replaceChildren(...newContent);
     fadeReplace(parent, newContent);
   });
@@ -50,7 +47,6 @@ function sortButtons(index) {
   const nav = document.querySelector(".nav_Global .nav");
   const buttons = nav.querySelectorAll(".uiButton");
   var arrayButtons = Array.from(buttons);
-  console.log("INDEX", index)
   prevIndex = index;
   if (window.innerWidth <= 600) {
     swapElements(arrayButtons, 0, index);
@@ -65,7 +61,6 @@ function sortButtons(index) {
 }
 
 function swapElements(list, a, b) {
-  console.log(list, a, b)
   var temp = list[b];
   temp.sortIndex = 0;
   list.splice(b, 1);
@@ -74,7 +69,9 @@ function swapElements(list, a, b) {
     b.sortIndex = b.originalIndex;
     return a.originalIndex - b.originalIndex
   })
-  list[0].sortIndex = 1;
+  for (var i = 0; i < list.length; i++) {
+    list[i].sortIndex = 1 + i;
+  }
   list.unshift(temp);
 }
 
