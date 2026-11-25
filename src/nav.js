@@ -19,7 +19,7 @@ function selectDisplay(display) {
   if (document.getElementsByClassName("content_Primary")[0].children[0].id == display) {
     return;
   }
-  fetch('../pages/' + display + '.html').then(function(response) {
+  fetch('./pages/' + display + '.html').then(function(response) {
     if (response.ok) {
       console.log(response)
       return response.text();
