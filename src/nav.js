@@ -67,7 +67,7 @@ function sortButtons(index) {
 function swapElements(list, a, b) {
   console.log(list, a, b)
   var temp = list[b];
-  temp.sortIndex = a;
+  temp.sortIndex = 0;
   list.splice(b, 1);
   list.sort(function (a, b) { 
     a.sortIndex = a.originalIndex;
