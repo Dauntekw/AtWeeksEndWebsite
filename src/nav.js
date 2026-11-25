@@ -66,11 +66,16 @@ function sortButtons(index) {
 
 function swapElements(list, a, b) {
   console.log(list, a, b)
-  var temp = list[a];
-  list[a] = list[b];
-  list[b] = temp;
-  list[a].sortIndex = a;
-  list[b].sortIndex = b;
+  var temp = list[b];
+  temp.sortIndex = a;
+  list.splice(b, 1);
+  list.sort(function (a, b) { 
+    a.sortIndex = a.originalIndex;
+    b.sortIndex = b.originalIndex;
+    return a.originalIndex - b.originalIndex
+  })
+  list[0].sortIndex = 1;
+  list.unshift(temp);
 }
 
 window.addEventListener("resize", (event) => {
