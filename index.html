@@ -17,9 +17,15 @@
       updateVolume();
       var buttons = document.getElementsByClassName("uiButton");
       for (var i = 0; i < buttons.length; i++) {
+        let id = buttons[i].id;
+        let className = buttons[i].className;
+        buttons[i].originalIndex = i;
+        buttons[i].sortIndex = i;
+        console.log("ID:" + id)
+        console.log("ID:" + buttons[i].sortIndex)
         buttons[i].onmouseover = playUIMove;
-        buttons[i].onclick = playUIConfirm;
       }
+      selectDisplay("story")
     }
     window.onmousemove = function() {
       var mainTheme = document.getElementById("mainTheme");
@@ -57,14 +63,14 @@
         </div>
         <div class="nav_Global">
           <nav class="nav" id="nav">
-            <a href="#story" class="uiButton">Story</a>
-            <a href="#glossary" class="uiButton">Glossary</a>
-            <a href="#how-to-play" class="uiButton">How To Play</a>
-            <a href="#contact" class="uiButton">Contact</a>
+            <a class="uiButton" id="story" onclick="selectDisplay('story'); playUIConfirm(); sortButtons(this.sortIndex)">Story</a>
+            <a class="uiButton" id="glossary" onclick="selectDisplay('glossary'); playUIConfirm(); sortButtons(this.sortIndex)">Glossary</a>
+            <a class="uiButton" id="howtoplay" onclick="selectDisplay('howtoplay'); playUIConfirm(); sortButtons(this.sortIndex)">How To Play</a>
+            <a class="uiButton" id="contact" onclick="selectDisplay('contact'); playUIConfirm(); sortButtons(this.sortIndex)">Contact</a>
           </nav>
         </div>
         <div class="content_Primary" id="main">
-          <div class="formattedP">
+          <div class="formattedP" id="story">
             <p is="f-p">
               \tAn otherworldly tower has appeared in the middle of the Atlantic ocean.
             </p>

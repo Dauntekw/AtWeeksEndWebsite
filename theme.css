@@ -14,8 +14,16 @@
   src: url(./assets/FELIXTI.TTF);
 }
 
+* {
+  overflow-anchor: none !important;
+  scroll-snap-stop: normal !important;
+  overscroll-behavior: unset !important;
+  scroll-behavior: unset !important;
+}
+
 
 .parallax {
+  overflow-anchor: none;
   overflow-x: hidden;
   overflow-y: auto;
   perspective: 1px;
@@ -30,10 +38,12 @@
   right: 0;
 }
 .layer0 {
+  overflow-anchor: none;
   transform: translateZ(0);
   -webkit-transform: translateZ(0);
 }
 .layer1 {
+  overflow-anchor: none;
   transform: translateZ(-2px);
   -webkit-transform: translateZ(-2px);
 }
@@ -50,12 +60,14 @@ audio {
 }
 div.overlap_Main {
   display: block;
+  overflow-anchor: none;
   width: 100%;
   position: absolute;
   top: 0;
 }
 div.background_Main {
   display: block;
+  overflow-anchor: none;
   width: 100%;
   position: absolute;
 }
@@ -71,6 +83,7 @@ body {
   display: block;
   background-color: #000000;
   overflow-x: hidden;
+  overflow-anchor: none;
   color: white;
   margin: 0;
   padding: 0;
@@ -82,6 +95,7 @@ body {
 div.header_Primary {
   display: flex;
   margin: 0;
+  overflow-anchor: none;
   padding-top: 0;
   padding-left: 1em;
   padding-right: 1em;
@@ -183,6 +197,7 @@ div.nav_Global {
   margin-right: 1em;
   padding: 0em;
   justify-content: center;
+  overflow-anchor: none;
   border-width: 12px;
   border-spacing: 0px;
   border-style: solid;
@@ -193,13 +208,17 @@ div.nav_Global {
 div.content_Primary {
   display: block;
   padding: 1em;
+  overflow-anchor: none;
   padding-left: 3em;
   padding-right: 3em;
   text-shadow: rgba(0,0,0,1) 0px 0px 4px;
   mix-blend-mode: normal;
+  transition: opacity 0.25s ease, height 0.25s;
+
 }
 div.content_Secondary {
   display: block;
+  overflow-anchor: none;
   padding: 1em;
   padding-left: 3em;
   padding-right: 3em;
@@ -225,6 +244,7 @@ div.footer_Global {
   mix-blend-mode: normal;
   width: 100%;
   display: flex;
+  overflow-anchor: none;
   overflow: hidden;
   justify-content: space-between;
   align-content: center;
